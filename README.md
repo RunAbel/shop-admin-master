@@ -2,26 +2,28 @@
 
 This template should help get you started developing with Vue 3 and Typescript in Vite.
 
-## 推荐的 IDE 设置
+随记：
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
-
-### If Using `<script setup>`
-
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
-
-## Type Support For `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
-
-### If Using Volar
-
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
-
-### If Using Vetur
-
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+- 项目采用[vite](https://cn.vitejs.dev/)来进行构建打包
+  - vite并没有集成eslint，需要自行[添加](https://eslint.org/docs/user-guide/getting-started)
+  - 手动配置eslint验证规则以此来适配vue3
+  - 编辑器集成
+    - 如果vscode插件安装有vetur(vue2代码校验插件) 需禁用
+    - 安装 ESLint、Vue Language Features (Volar) 插件，并手动配置并启用
+  - 安装配置 git commit hook
+    > 在提交前自动运行link，杜绝不符合规范的代码进入库中
+    - [husky](https://github.com/typicode/husky)
+    - [lint-staged](https://github.com/okonet/lint-staged)
+  - 在开发和构建中进行代码规范校验
+    - [awesome-vite#plugins](https://github.com/vitejs/awesome-vite#plugins) || [vite-plugin-eslint](https://github.com/gxmari007/vite-plugin-eslint)
+      - 关闭ESLint的cache，避免因为[缓存问题报错](https://blog.csdn.net/xuefeng11111/article/details/121688821)
+  - commit message
+    > 格式化提交信息，让每一次代码提交都具有实际意义
+    - [commitlint](https://github.com/conventional-changelog/commitlint)
+      - feat: 新功能
+      - fix: 修补bug
+      - docs: 文档
+      - style: 格式(不影响代码运行的变动)
+      - refactor: 重构(既不是新增功能,也不是修改bug的代码变动)
+      - test: 增加测试
+      - chore: 构建过程或辅助工具的变动
