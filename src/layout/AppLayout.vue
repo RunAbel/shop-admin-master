@@ -17,7 +17,6 @@
 <script lang="ts" setup>
 import AppMenu from './AppMenu/index.vue'
 import AppHeader from './AppHeader/index.vue'
-
 </script>
 
 <style lang="scss" scoped>

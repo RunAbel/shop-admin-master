@@ -3,6 +3,8 @@ import AppLayout from '@/layout/AppLayout.vue'
 import productRouter from './modules/product'
 import settingRouter from './modules/setting'
 import systemRouter from './modules/system'
+import orderRouter from './modules/order'
+import permission from './modules/permission'
 import nprogress from 'nprogress' // @types/nprogress
 import 'nprogress/nprogress.css'
 import { store } from '@/store'
@@ -27,7 +29,9 @@ const routes: RouteRecordRaw[] = [
       },
       productRouter,
       settingRouter,
-      systemRouter
+      systemRouter,
+      orderRouter,
+      permission
     ]
   },
   {

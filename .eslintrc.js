@@ -19,7 +19,7 @@ module.exports = {
   rules: {
     'vue/no-mutating-props': 'off'
   },
-  overrides: [
+  overrides: [ // 重写 api 返回数据的验证规则
     {
       files: ['src/api/**/*.ts'],
       rules: {

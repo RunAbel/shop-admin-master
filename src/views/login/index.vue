@@ -81,7 +81,7 @@ const route = useRoute()
 const form = ref<IElForm | null>(null)
 const captchaSrc = ref('')
 const user = reactive({
-  account: 'admin',
+  account: 'lagou',
   pwd: '123456',
   imgcode: ''
 })
