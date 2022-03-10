@@ -20,7 +20,7 @@
   > 格式化提交信息，让每一次代码提交都具有实际意义
   - [commitlint](https://github.com/conventional-changelog/commitlint)
     - feat: 新功能
-    - fix: 修补bug
+    - fix: 修补Bug
     - docs: 文档
     - style: 格式(不影响代码运行的变动)
     - refactor: 重构(既不是新增功能,也不是修改bug的代码变动)
